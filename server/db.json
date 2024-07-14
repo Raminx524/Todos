@@ -1,18 +1,8 @@
 {
   "todos": [
     {
-      "id": "a1b2c",
-      "title": "Buy groceries",
-      "isComplete": false
-    },
-    {
       "id": "d3e4f",
       "title": "Walk the dog",
-      "isComplete": true
-    },
-    {
-      "id": "g5h6i",
-      "title": "Finish homework",
       "isComplete": false
     },
     {

@@ -15,15 +15,18 @@ function CreateTodoForm({ setTodos }: CreateTodoFormProps) {
     const formData = new FormData(formElem);
     const title = formData.get("title");
     try {
-      const res = await axios.post(apiUrl, { title: formElem.title });
+      const res = await axios.post(apiUrl, { title, isComplete: false });
+      setTodos((prevTodos) => [...prevTodos, res.data]);
     } catch (err) {
       console.log(err);
     }
   }
   return (
-    <form onSubmit={handleCreateTodo}>
+    <form onSubmit={handleCreateTodo} className="flex flex-col gap-4">
       <Input placeholder="Title..." name="title" />
-      <Button type="submit">Add Todo</Button>
+      <Button type="submit" className="bg-green-700 ">
+        Add Todo
+      </Button>
     </form>
   );
 }
